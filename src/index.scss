@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+// Change the theme
+$theme-colors: (
+  "primary": #3c5aa6,
+  "danger": #ef5350
+);
+
+// Import Bootstrap and its default variables
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
