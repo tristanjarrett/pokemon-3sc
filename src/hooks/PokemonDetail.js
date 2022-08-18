@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-function PokemonDetail(props) {
+function PokemonDetail() {
   const { pokemon } = useParams();
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [item, setItem] = useState({});
 
-  // Note: the empty deps array [] means
-  // this useEffect will run once
-  // similar to componentDidMount()
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
       .then(res => res.json())
@@ -18,20 +15,17 @@ function PokemonDetail(props) {
           setIsLoaded(true);
           setItem(result);
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           setIsLoaded(true);
           setError(error);
         }
       )
-  }, [])
+  }, [pokemon])
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div className="d-flex align-items-center justify-content-center">Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="d-flex align-items-center justify-content-center">Loading...</div>;
   } else {
     return (
       JSON.stringify(item)

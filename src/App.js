@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import Dashboard from './pages/Dashboard';
 import Favourites from './pages/Favourites';
-import Search from './pages/Search';
 import Details from './pages/Details';
 
 function App() {
@@ -16,13 +15,10 @@ function App() {
     <div>
       <Navigation />
       <Switch>
-        <Route path="/search">
-          <Search />
-        </Route>
         <Route path="/favourites">
           <Favourites />
         </Route>
-        <Route path="/:pokemon">
+        <Route path="/details/:pokemon">
           <Details />
         </Route>
         <Route path="/">

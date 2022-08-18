@@ -1,11 +1,11 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
 import Logo from '../assets/logo.png';
 import Button from 'react-bootstrap/Button';
 import './Navigation.scss';
-import { FaSearch } from 'react-icons/fa';
+// import { FaSearch } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 
 function Navigation() {
   return (
@@ -16,19 +16,10 @@ function Navigation() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Dashboard</Nav.Link>
-            <Nav.Link href="/favourites">Favourites</Nav.Link>
+          <Nav className="ms-auto">
+            {/* <Nav.Link href="/">Dashboard</Nav.Link> */}
+            <Button href="/favourites" variant="outline-light" size="lg" className="d-flex align-items-center justify-content-center">Favourites <FaHeart className="d-inline-block ms-2" /></Button>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Find a Pokemon"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="primary" className="d-flex align-items-center">Search <FaSearch className="ms-2 d-inline-block" /></Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>

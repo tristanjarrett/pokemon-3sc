@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f9 !important;
 }
 
 code {
@@ -13,10 +14,10 @@ code {
 }
 
 // Change the theme
-$theme-colors: (
-  "primary": #3c5aa6,
-  "danger": #ef5350
-);
+$border-radius: 0;
+$border-radius-lg: 0;
+$primary: #3c5aa6;
+$danger: #ef5350;
 
 // Import Bootstrap and its default variables
 @import '../node_modules/bootstrap/scss/bootstrap.scss';

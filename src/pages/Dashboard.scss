@@ -1,0 +1,26 @@
+.dashMain {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.dashHead {
+  margin-bottom: 3rem;
+}
+
+.dashItem {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  background-color: white;
+  box-shadow: 2px 2px 5px #e1e1e1;
+  color: black;
+  font-size: 1.25rem;
+  &:hover {
+    color: black;
+    background-color: #f1f1f1;
+  }
+}
