@@ -39,6 +39,12 @@ npm start
 
 - Its been a while since createing a similar app from scratch so needed to brush up on some knowledge (thanks google!)
 - Wanted to adhere to the PokeAPI fair use policy so needed to find a simple and quick way to cache data (my solution is not the most practical for dynamic content but fine for this example)
+- Deploying the project on Netlify seemed to give me 404 errors on routes, so needed to find a quick solution as I didnt anticipate that because I was using React Router
+- Found it hard to think of a way to filter Pokemon by the generation as I didnt know enough about the subject
+
+## Things I would do differently
+
+- Adding Pokemon to favourites would be done in a different way, a new saved list of all favourites rather than adding a key to the existing object array because this presented problems when trying to identify if an item was already a favourite by filtering through all 1000+ items (i.e: the star on the details page doesnt hold a toggled state yet)
 
 ## Additional functionality
 
@@ -50,3 +56,5 @@ npm start
 - Go outside :deciduous_tree:
 - Have a coffee :coffee:
 - Try forget about Pokemon, lol
+- But in all seriousness, I would have refined the UI a bit more maybe
+- Redesign the favourites system
