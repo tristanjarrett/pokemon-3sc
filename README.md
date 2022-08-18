@@ -38,7 +38,7 @@ npm start
 ## Challenges
 
 - Its been a while since createing a similar app from scratch so needed to brush up on some knowledge (thanks google!)
-- Wanted to adhere to the PokeAPI fair use policy so needed to find a simply and quick way to cache data (my solution is not the most practical for dynamic content but fine for this example)
+- Wanted to adhere to the PokeAPI fair use policy so needed to find a simple and quick way to cache data (my solution is not the most practical for dynamic content but fine for this example)
 
 ## Additional functionality
 
@@ -47,6 +47,6 @@ npm start
 
 ## If I had more time I would
 
-- Go outside 
-- Have a coffee
+- Go outside :deciduous_tree:
+- Have a coffee :coffee:
 - Try forget about Pokemon, lol
