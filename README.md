@@ -1,5 +1,7 @@
 # PokeAPI React Client
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6716dc2f-ebf0-4495-82ec-17c7bd20b849/deploy-status)](https://app.netlify.com/sites/superb-muffin-41e605/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Run Locally
