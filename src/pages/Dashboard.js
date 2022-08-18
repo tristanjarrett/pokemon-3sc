@@ -1,11 +1,12 @@
 import './Dashboard.scss';
 import Container from 'react-bootstrap/Container';
 import PokemonList from '../hooks/PokemonList';
-import { Row, Col, Dropdown, Button } from 'react-bootstrap';
+import { Row, Col, Dropdown } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import { FaSearch } from 'react-icons/fa';
+import { useState } from 'react';
 
 function Dashboard() {
+  const [searchFilter, setSearchFilter] = useState("");
   return (
     <Container className="dashMain">
       <div className="dashHead">
@@ -17,8 +18,10 @@ function Dashboard() {
                 placeholder="Find a Pokemon"
                 aria-label="Search"
                 size="lg"
+                onChange={(e) => {
+                  setSearchFilter(e.target.value);
+                }}
               />
-              <Button variant="primary" size="lg" className="d-flex align-items-center">Search <FaSearch className="ms-2 d-inline-block" /></Button>
             </Form>
           </Col>
           <Col className="ms-auto" xs="auto">
@@ -33,7 +36,7 @@ function Dashboard() {
           </Col>
         </Row>
       </div>
-      <PokemonList />
+      <PokemonList filter={searchFilter} />
     </Container>
   );
 }

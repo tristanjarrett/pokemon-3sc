@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 
-function PokemonList() {
+function PokemonList(props) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -40,7 +40,13 @@ function PokemonList() {
   } else {
     return (
       <Row>
-        {items.map(item => (
+        {items.filter((value) => {
+          if (props.filter === "") {
+            return value;
+          } else if (value.name.toLowerCase().includes(props.filter.toLowerCase())) {
+            return value;
+          }
+        }).map(item => (
           <Col xs="6" md="4" lg="3" key={item.name}>
             <Link to={`/details/${item.name}`} className="dashItem">
               {item.name}
