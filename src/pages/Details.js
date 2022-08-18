@@ -4,11 +4,11 @@ import PokemonDetail from '../hooks/PokemonDetail';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { FaHeart } from 'react-icons/fa';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 function Details() {
   const { pokemon } = useParams();
-
+  const [itemFav, setItemFav] = useState(false);
   const [favs, setFavs] = useState([]);
 
   useEffect(() => {
@@ -29,16 +29,21 @@ function Details() {
       return item;
     });
 
+    setItemFav(!itemFav);
     setFavs(newFavs);
     localStorage.setItem('POKEMON_DATA', JSON.stringify(newFavs));
   }
 
   return (
     <Container className="detailsMain">
-      <Row>
-        <Col><h1>Details: <span className="detailsTitle">{pokemon}</span></h1></Col>
-        <Col md="auto"><FaHeart onClick={() => updateFavs(pokemon)} /></Col>
-      </Row>
+      <div className="detailsHead">
+        <Row>
+          <Col><h1>Details: <span className="detailsTitle">{pokemon}</span></h1></Col>
+          <Col md="auto">
+            {itemFav ? <AiFillStar onClick={() => updateFavs(pokemon)} /> : <AiOutlineStar onClick={() => updateFavs(pokemon)} />}
+            </Col>
+        </Row>
+      </div>
       <PokemonDetail />
     </Container>
   );

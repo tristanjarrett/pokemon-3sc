@@ -5,7 +5,7 @@ import Logo from '../assets/logo.png';
 import Button from 'react-bootstrap/Button';
 import './Navigation.scss';
 // import { FaSearch } from 'react-icons/fa';
-import { FaHeart } from 'react-icons/fa';
+import { AiFillStar } from 'react-icons/ai';
 
 function Navigation() {
   return (
@@ -18,7 +18,7 @@ function Navigation() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             {/* <Nav.Link href="/">Dashboard</Nav.Link> */}
-            <Button href="/favourites" variant="outline-light" size="lg" className="d-flex align-items-center justify-content-center">Favourites <FaHeart className="d-inline-block ms-2" /></Button>
+            <Button href="/favourites" variant="warning" size="lg" className="d-flex align-items-center justify-content-center">Favourites <AiFillStar className="d-inline-block ms-2" /></Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

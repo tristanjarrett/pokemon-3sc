@@ -1,7 +1,7 @@
 import './Favourites.scss';
 import { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
-import { FaHeart } from 'react-icons/fa';
+import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 function Favourites() {
@@ -35,7 +35,7 @@ function Favourites() {
       <ul className="favList">
         {favs.map((item) => {
           if (item.isFav) {
-            return <li key={item.name}><Link to={`/details/${item.name}`}>{item.name}</Link><FaHeart onClick={() => updateFavs(item.name)} className="d-inline-block ms-auto" /></li>
+            return <li key={item.name}><Link to={`/details/${item.name}`}>{item.name}</Link><AiFillStar onClick={() => updateFavs(item.name)} className="d-inline-block ms-auto" /></li>
           } else {
             return null;
           }

@@ -3,10 +3,14 @@
   padding-bottom: 3rem;
 }
 
-h1 {
+.detailsHead {
   margin-bottom: 3rem;
-}
-
-.detailsTitle {
-  text-transform: capitalize;
+  .detailsTitle {
+    text-transform: capitalize;
+  }
+  svg {
+    fill: #ffcb05;
+    font-size: 3rem;
+    cursor: pointer;
+  }
 }
