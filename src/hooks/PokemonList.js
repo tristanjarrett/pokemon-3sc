@@ -45,6 +45,8 @@ function PokemonList(props) {
             return value;
           } else if (value.name.toLowerCase().includes(props.filter.toLowerCase())) {
             return value;
+          } else {
+            return null;
           }
         }).map(item => (
           <Col xs="6" md="4" lg="3" key={item.name}>
