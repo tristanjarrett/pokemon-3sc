@@ -38,7 +38,7 @@ function Details() {
     <Container className="detailsMain">
       <div className="detailsHead">
         <Row>
-          <Col><h1>Details: <span className="detailsTitle">{pokemon}</span></h1></Col>
+          <Col><h1 className="mb-0"><span className="detailsTitle">{pokemon}</span></h1></Col>
           <Col md="auto">
             {itemFav ? <AiFillStar onClick={() => updateFavs(pokemon)} /> : <AiOutlineStar onClick={() => updateFavs(pokemon)} />}
             </Col>

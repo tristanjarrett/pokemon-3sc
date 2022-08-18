@@ -12,7 +12,7 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-transform: capitalize;
   text-decoration: none;
   background-color: white;
@@ -22,5 +22,20 @@
   &:hover {
     color: black;
     background-color: #f1f1f1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .isLoading {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(2160deg);
   }
 }

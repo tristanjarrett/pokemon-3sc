@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Image from 'react-bootstrap/Image';
+import Table from 'react-bootstrap/Table';
+import { Row, Col } from 'react-bootstrap';
 
 function PokemonDetail() {
   const { pokemon } = useParams();
@@ -28,7 +31,52 @@ function PokemonDetail() {
     return <div className="d-flex align-items-center justify-content-center">Loading...</div>;
   } else {
     return (
-      JSON.stringify(item)
+      <>
+        {/* I know this technically isnt the correct use of a "hook" but im rushing */}
+        <h3>Details</h3>
+        <Row>
+          <Col>
+            <p>Height: {item.height}</p>
+            <p>Weight: {item.weight}</p>
+            <p>Base Experience: {item.base_experience}</p>
+          </Col>
+          <Col md="auto">
+            <Image src={item.sprites.front_default} />
+          </Col>
+        </Row>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Abilities</th>
+            </tr>
+          </thead>
+          <tbody>
+            {item.abilities.map((value, key) => {
+              return (
+                <tr key={key}>
+                  <td>{value.ability.name}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </Table>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Moves</th>
+            </tr>
+          </thead>
+          <tbody>
+            {item.moves.map((value, key) => {
+              return (
+                <tr key={key}>
+                  <td>{value.move.name}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </Table>
+      </>
     );
   }
 }

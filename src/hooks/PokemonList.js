@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
+import PokemonSprite from '../hooks/PokemonSprite';
 
 function PokemonList(props) {
   const [error, setError] = useState(null);
@@ -11,7 +12,7 @@ function PokemonList(props) {
 
     if (!localStorage.getItem("POKEMON_DATA")) {
       // console.log("USING API");
-      fetch("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0")
+      fetch("https://pokeapi.co/api/v2/pokemon?limit=200&offset=0")
         .then(res => res.json())
         .then(
           (result) => {
@@ -52,6 +53,7 @@ function PokemonList(props) {
           <Col xs="6" md="4" lg="3" key={item.name}>
             <Link to={`/details/${item.name}`} className="dashItem">
               {item.name}
+              <PokemonSprite pokemon={item.name} />
             </Link>
           </Col>
         ))}
